@@ -1,0 +1,20 @@
+.WeatherContent {
+  margin-top: 20px;
+}
+
+.WeatherContent .temperature-container {
+  margin-top: 30px;
+  align-items: center;
+}
+.weatherData {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.overcast {
+  margin-top: 120px;
+}
+
+.temperature {
+  font-weight: bold;
+}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import WeatherContent from "./WeatherInfo";
+import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./weatherForecast";
 import axios from "axios";
 import "./Weather.css";
@@ -41,29 +41,27 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="WeatherApp">
-        <form onSubmit={handleSubmit}>
-          <div className="row">
-            <div className="col-9 ">
+        <div className="container">
+          <form onSubmit={handleSubmit}>
+            <div className="d-flex">
               <input
                 type="search"
                 placeholder="Enter a city.."
                 className="form-control search-input"
                 onChange={handleChangeCity}
               />
-            </div>
-            <div className="col-3 p-0">
               <input
                 type="submit"
                 value="Search"
                 className="btn btn-primary w-100"
               />
             </div>
-          </div>
-        </form>
-        <WeatherContent data={weatherData} />
+          </form>
+        </div>
+        <WeatherInfo data={weatherData} />
         <br />
         <br />
-        <h3>This week's weather</h3>
+        <h3>Forecast for the week</h3>
         <WeatherForecast
           coordinates={weatherData.coordinates}
           city={weatherData.city}
